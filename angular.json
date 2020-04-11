@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +125,47 @@
           }
         }
       }
-    }},
+    },
+    "ng-bottom-navigation": {
+      "projectType": "library",
+      "root": "projects/ng-bottom-navigation",
+      "sourceRoot": "projects/ng-bottom-navigation/src",
+      "prefix": "bottom",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-bottom-navigation/tsconfig.lib.json",
+            "project": "projects/ng-bottom-navigation/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-bottom-navigation/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-bottom-navigation/src/test.ts",
+            "tsConfig": "projects/ng-bottom-navigation/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-bottom-navigation/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-bottom-navigation/tsconfig.lib.json",
+              "projects/ng-bottom-navigation/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "example-app"
 }

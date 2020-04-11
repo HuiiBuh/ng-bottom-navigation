@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-bottom-navigation": [
+        "dist/ng-bottom-navigation/ng-bottom-navigation",
+        "dist/ng-bottom-navigation"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

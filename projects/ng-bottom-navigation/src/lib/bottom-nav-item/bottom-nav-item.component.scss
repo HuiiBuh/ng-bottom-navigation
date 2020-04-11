@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  height: $height;
+  width: $height;
+}
