@@ -1,12 +1,31 @@
 <bottom-nav-container>
 
   <bottom-nav-content>
-    <p style="height: 200vh">main content</p>
+    <mat-toolbar>An example for a bottom nav bar</mat-toolbar>
+
+    <router-outlet></router-outlet>
+
   </bottom-nav-content>
 
   <bottom-nav>
-    <bottom-nav-item>home</bottom-nav-item>
-    <bottom-nav-item>3d_rotation</bottom-nav-item>
-    <bottom-nav-item>account_circle</bottom-nav-item>
+    <bottom-nav-item [routerLink]="''"
+                     [routerLinkActive]="['bottom-nav-active']"
+                     [routerLinkActiveOptions]="{exact:true}">
+      home
+    </bottom-nav-item>
+    <bottom-nav-item [routerLink]="'/like'"
+                     [routerLinkActive]="['bottom-nav-active']"
+                     [routerLinkActiveOptions]="{exact:true}">
+      thumb_up
+    </bottom-nav-item>
+    <bottom-nav-item [routerLink]="'/watch'"
+                     [routerLinkActive]="['bottom-nav-active']"
+                     [routerLinkActiveOptions]="{exact:true}">
+      watch_later
+    </bottom-nav-item>
   </bottom-nav>
+
 </bottom-nav-container>
+
+
+<!---->

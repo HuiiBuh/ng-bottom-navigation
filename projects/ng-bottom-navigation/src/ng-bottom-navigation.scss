@@ -1,7 +1,21 @@
-bottom-nav-item {
-  display: contents;
+:root {
+  --bottom-nav-active-color: #3880ff;
+  --bottom-nav-height: 60px;
 }
 
-bottom-nav-container > * {
-  user-select: none !important;
+bottom-nav-container * {
+  user-select: none;
+  outline: none;
+}
+
+.bottom-nav-active {
+  color: var(--bottom-nav-active-color);
+}
+
+.bottom-nav-active mat-icon {
+  color: var(--bottom-nav-active-color) !important;
+}
+
+.bottom-nav > bottom-nav-item {
+  flex-grow: 1;
 }

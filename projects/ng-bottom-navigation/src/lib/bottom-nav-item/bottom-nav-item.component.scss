@@ -1,12 +1,21 @@
-@import '../../variables';
-
 .button-wrapper {
+  outline: none;
   display: flex;
   align-items: center;
   justify-content: center;
 
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
-  height: $height;
-  width: $height;
+  height: var(--bottom-nav-height);
 }
+
+.router-icon {
+  color: #666
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
