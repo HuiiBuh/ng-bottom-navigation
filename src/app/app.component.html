@@ -8,24 +8,15 @@
   </bottom-nav-content>
 
   <bottom-nav>
-    <bottom-nav-item [routerLink]="''"
-                     [routerLinkActive]="['bottom-nav-active']"
-                     [routerLinkActiveOptions]="{exact:true}">
+    <bottom-nav-item link="" [exact]="true" label="home">
       home
     </bottom-nav-item>
-    <bottom-nav-item [routerLink]="'/like'"
-                     [routerLinkActive]="['bottom-nav-active']"
-                     [routerLinkActiveOptions]="{exact:true}">
+    <bottom-nav-item link="like" [exact]="true" label="like">
       thumb_up
     </bottom-nav-item>
-    <bottom-nav-item [routerLink]="'/watch'"
-                     [routerLinkActive]="['bottom-nav-active']"
-                     [routerLinkActiveOptions]="{exact:true}">
+    <bottom-nav-item link="watch" [exact]="true" label="watch">
       watch_later
     </bottom-nav-item>
   </bottom-nav>
 
 </bottom-nav-container>
-
-
-<!---->

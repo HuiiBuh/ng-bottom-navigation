@@ -8,6 +8,7 @@ import { BottomNavItemComponent } from './bottom-nav-item/bottom-nav-item.compon
 import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
 import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [BottomNavContainerComponent, BottomNavComponent, BottomNavContentComponent, BottomNavItemComponent],
@@ -17,6 +18,7 @@ import {RouterModule} from '@angular/router';
     MatButtonModule,
     MatRippleModule,
     RouterModule,
+    CommonModule,
   ],
   exports: [BottomNavContainerComponent, BottomNavComponent, BottomNavContentComponent, BottomNavItemComponent],
 })

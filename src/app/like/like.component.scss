@@ -1,0 +1,12 @@
+.like-component {
+  width: 100%;
+  height: calc(100% - 64px);
+  background: rgba(174, 255, 180, 0.33);
+}
+
+
+@media(max-width: 599px) {
+  .like-component {
+    height: calc(100% - 56px);
+  }
+}
