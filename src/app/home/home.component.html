@@ -1,5 +1,13 @@
-<div style="padding: .5rem">
+<div *ngIf="!devMode">
 
-  <markdown [src]="'https://raw.githubusercontent.com/HuiiBuh/ng-bottom-navigation/master/README.md'"></markdown>
+  <markdown src="https://raw.githubusercontent.com/HuiiBuh/ng-bottom-navigation/master/README.md"
+            lineNumbers [start]="1"
+  ></markdown>
+
+</div>
+
+<div *ngIf="devMode">
+
+  <markdown src="assets/README.md" lineNumbers [start]="1"></markdown>
 
 </div>

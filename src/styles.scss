@@ -9,3 +9,14 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+app-home {
+  p {
+    display: flex;
+  }
+
+  img {
+    width: 30vw;
+    margin: auto;
+  }
+}
