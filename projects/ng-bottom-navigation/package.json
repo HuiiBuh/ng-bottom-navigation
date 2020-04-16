@@ -1,6 +1,26 @@
 {
   "name": "ng-bottom-navigation",
-  "version": "0.0.1",
+  "author": "HuiiBuh",
+  "license": "MIT",
+  "description": "A small library which adds a material bottom nav bar.",
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HuiiBuh/ng-bottom-navigation"
+  },
+  "bugs": {
+    "url": "https://github.com/HuiiBuh/ng-bottom-navigation/issues"
+  },
+  "homepage": "https://github.com/HuiiBuh/ng-bottom-navigation",
+  "keywords": [
+    "angular",
+    "angular 9",
+    "angular material",
+    "material",
+    "bottom",
+    "navigation",
+    "bottom navigation"
+  ],
   "peerDependencies": {
     "@angular/common": "^9.1.1",
     "@angular/core": "^9.1.1",

@@ -1,24 +1,68 @@
-# NgBottomNavigation
+# Bottom Navigation Bar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+## Dependencies
 
-## Code scaffolding
++ [Angular material](https://material.angular.io/)
++ [Material icons](https://www.npmjs.com/package/@material-ui/icons)
 
-Run `ng generate component component-name --project ng-bottom-navigation` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-bottom-navigation`.
-> Note: Don't forget to add `--project ng-bottom-navigation` or else it will be added to the default project in your `angular.json` file. 
+Both libraries have to be installed in your project.
 
-## Build
+## Usage
 
-Run `ng build ng-bottom-navigation` to build the project. The build artifacts will be stored in the `dist/` directory.
+```html
+<!-- A wrapper for the hole page --> 
+<bottom-nav-container>
 
-## Publishing
+  <!-- The main content has to be inside here -->
+  <!-- You can add a nav, ... It is recommended to put the router in here -->
+  <bottom-nav-content>
+    <router-outlet></router-outlet>
+  </bottom-nav-content>
 
-After building your library with `ng build ng-bottom-navigation`, go to the dist folder `cd dist/ng-bottom-navigation` and run `npm publish`.
+  <!-- The bottom nav bar -->
+  <bottom-nav>
 
-## Running unit tests
+    <!-- Add a bottom-nav-item for every  icon in the bottom nav. -->
+    <!-- The name in the bottom-nav-icon (home) is the name of the material icon -->
+    <!-- Use the link input like a [routerLink] -->
+    <bottom-nav-item link="">
+      home
+    </bottom-nav-item>
 
-Run `ng test ng-bottom-navigation` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    <!-- Do you want to match the provided path exactly, -->
+    <!-- or do you want to include paths which extend the path into the path matching (default not exact) -->
+    <!-- /like/me would be matched if exact is false -->
+    <bottom-nav-item [link]="'like'" [exact]="true">
+      thumb_up
+    </bottom-nav-item>
 
-## Further help
+    <!-- The label is optional and adds a ... label to the icon -->
+    <bottom-nav-item link="watch" [exact]="true" label="watch">
+      watch_later
+    </bottom-nav-item>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  </bottom-nav>
+
+</bottom-nav-container>
+```
+
+In addition to the html you have to include the `ng-bottom-navigation.scss` file in your index.scss file!
+
+## Configuration and themeing
+
+The background of the nav-bar automatically changes to a dark color, if you have a dark theme.
+If you use a custom theme and want other highlight colors you can add your own highlight color with css variables. 
+
+```scss
+:root {
+  // Configure the active color 
+  --bottom-nav-active-color: #3880ff;
+  
+  // Configure the height of the nav bar
+  --bottom-nav-height: 60px;
+}
+```
+
+## Result
+
+![result](https://i.imgur.com/R2ikMzS.png)
