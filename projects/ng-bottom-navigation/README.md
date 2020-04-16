@@ -1,11 +1,18 @@
 # Bottom Navigation Bar
 
+### Installation
+
+```bash
+npm install --save ng-bottom-navigation
+```
+
 ## Dependencies
 
 + [Angular material](https://material.angular.io/)
 + [Material icons](https://www.npmjs.com/package/@material-ui/icons)
 
-Both libraries have to be installed in your project.
+Both libraries have to be installed in your project.  
+In addition to this angular routing has to be enabled. 
 
 ## Usage
 
