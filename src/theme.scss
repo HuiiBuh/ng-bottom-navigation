@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+@import 'projects/ng-bottom-navigation/ng-bottom-navigation';
+
+@include mat-core();
+
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-pink, A200, A100, A400);
+$warm: mat-palette($mat-red);
+
+$light-theme: mat-light-theme($primary, $accent, $warm);
+@include angular-material-theme($light-theme);
+@include bottom-nav-theme($light-theme);
+
+.colorful-theme {
+  @include bottom-nav-theme($light-theme, colorful)
+}
+
+.dark-theme {
+  $dark-primary: mat-palette($mat-orange);
+  $dark-accent: mat-palette($mat-blue, A200, A100, A400);
+  $dark-warm: mat-palette($mat-red);
+
+  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warm);
+
+  @include angular-material-theme($dark-theme);
+  @include bottom-nav-theme($dark-theme);
+}
+

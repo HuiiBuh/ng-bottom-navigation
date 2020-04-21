@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -7,5 +7,11 @@ import {Component} from '@angular/core';
   styleUrls: ['./bottom-nav-container.component.scss'],
 })
 export class BottomNavContainerComponent {
+  _height: string = '60px';
 
+  @Input()
+  set height(value: string) {
+    this._height = value;
+    document.documentElement.style.setProperty('--bottom-nav-height', value);
+  }
 }

@@ -1,4 +1,4 @@
-.button-wrapper {
+.bottom-nav-button-wrapper {
   outline: none;
   display: flex;
   align-items: center;
@@ -11,9 +11,6 @@
   height: var(--bottom-nav-height);
 }
 
-.router-icon {
-  color: #666
-}
 
 mat-icon {
   cursor: pointer;

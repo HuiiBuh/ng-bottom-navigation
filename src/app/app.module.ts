@@ -12,6 +12,10 @@ import {LikeComponent} from './like/like.component';
 import {WatchComponent} from './watch/watch.component';
 import {MarkdownModule} from 'ngx-markdown';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
       loader: HttpClient,
       sanitize: SecurityContext.NONE,
     }),
+    MatDividerModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

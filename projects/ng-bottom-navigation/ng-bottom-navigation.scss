@@ -1,5 +1,7 @@
+@import '~@angular/material/theming';
+@import '~@angular/material/divider/divider-theme';
+
 :root {
-  --bottom-nav-active-color: #3880ff;
   --bottom-nav-height: 60px;
 }
 
@@ -7,14 +9,108 @@ bottom-nav-container * {
   outline: none;
 }
 
-.bottom-nav-active {
-  color: var(--bottom-nav-active-color);
+.bottom-nav {
+  bottom-nav-item {
+    flex-grow: 1;
+    height: var(--bottom-nav-height) !important;
+  }
+
+  .bottom-nav-button-wrapper {
+    height: var(--bottom-nav-height) !important
+  }
 }
 
-.bottom-nav-active mat-icon {
-  color: var(--bottom-nav-active-color) !important;
+
+// Default colors if no theming is present
+.bottom-nav {
+  border-top-color: rgb(220, 220, 220);
+
+  bottom-nav-item {
+    color: #666;
+  }
+
+  .bottom-nav-active {
+    color: #3880ff;
+  }
 }
 
-.bottom-nav > bottom-nav-item {
-  flex-grow: 1;
+
+@mixin bottom-nav-theme($theme, $mode: '') {
+  $is-dark-theme: map-get($theme, is-dark);
+
+  @if $is-dark-theme {
+    @include -plane-nav-theme($theme);
+  } @else {
+
+    @if $mode == 'colorful' {
+      @include -colorful-nav-theme($theme);
+    } @else {
+      @include -plane-nav-theme($theme);
+    }
+
+  }
+}
+
+
+@mixin -plane-nav-theme($theme) {
+
+  .bottom-nav {
+    // Set the background
+    background: -get-background($theme, background);
+
+    // Set the color of the divider
+    border-top-color: -get-divider-color($theme);
+
+    // Gray for not active icon
+    bottom-nav-item {
+      color: #666;
+    }
+
+    // Adapt the active color of the icon to the primary color
+    .bottom-nav-active * {
+      color: map-get(map-get($theme, primary), default);
+    }
+  }
+}
+
+@mixin -colorful-nav-theme($theme) {
+
+  .bottom-nav {
+    // Set the background
+    background: -get-background($theme, darker);
+
+    // Set the color of the divider
+    border-top-color: -get-divider-color($theme);
+
+    // Adapt the active color of the icon to the primary color
+    bottom-nav-item {
+      color: map-get(map-get($theme, primary), A200);
+    }
+
+    .bottom-nav-active * {
+      color: white;
+    }
+  }
+}
+
+
+@function -get-background($theme, $mode) {
+  $is-dark-theme: map-get($theme, is-dark);
+
+  $background: white;
+  @if $is-dark-theme {
+    $background: #212121;
+  } @else {
+    $primary: map-get($theme, primary);
+    $background: mat-color($primary, $mode);
+  }
+
+  @return $background;
+}
+
+
+@function -get-divider-color($theme) {
+  $foreground: map-get($theme, foreground);
+  $divider: map-get($foreground, divider);
+  @return $divider;
 }

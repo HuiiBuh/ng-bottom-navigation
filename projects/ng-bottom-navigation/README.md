@@ -1,6 +1,6 @@
 # Bottom Navigation Bar
 
-### Installation
+## Installation
 
 ```bash
 npm install --save ng-bottom-navigation
@@ -12,13 +12,13 @@ npm install --save ng-bottom-navigation
 + [Material icons](https://www.npmjs.com/package/@material-ui/icons)
 
 Both libraries have to be installed in your project.  
-In addition to this angular routing has to be enabled. 
+In addition to this angular routing has to be enabled.
 
 ## Usage
 
 ```html
-<!-- A wrapper for the hole page --> 
-<bottom-nav-container>
+<!-- A wrapper for the hole page -->
+<bottom-nav-container [height]="70px">
 
   <!-- The main content has to be inside here -->
   <!-- You can add a nav, ... It is recommended to put the router in here -->
@@ -55,21 +55,30 @@ In addition to this angular routing has to be enabled.
 
 In addition to the html you have to include the `ng-bottom-navigation.scss` file in your index.scss file!
 
-## Configuration and themeing
+## Configuration and theming
 
-The background of the nav-bar automatically changes to a dark color, if you have a dark theme.
-If you use a custom theme and want other highlight colors you can add your own highlight color with css variables. 
-
-```scss
-:root {
-  // Configure the active color 
-  --bottom-nav-active-color: #3880ff;
+If you are using a custom theme you can take advantage of the theming mixin fo the navigationbar.  
+Import the `ng-bottom-navigation.scss` file and use the `bottom-nav-theme` mixin.
   
-  // Configure the height of the nav bar
-  --bottom-nav-height: 60px;
+```scss
+// Earlier created custom theme
+$light-theme: mat-light-theme($primary, $accent, $warm);
+
+// Include the mixin and pass your custom theme
+@include bottom-nav-theme($light-theme);
+
+// You can also pass the colorful option ot the mixin. This will change the background color of the nav bar to your primary color
+@include bottom-nav-theme($light-theme, colorful)
+
+// You also have to include the mixin in your dark theme and padd the dark theme to it
+.dark-theme {
+  $dark-theme: mat-light-theme($primary, $accent, $warm);
+  @include bottom-nav-theme($dark-theme)
 }
+
+
 ```
 
 ## Result
 
-![result](https://i.imgur.com/R2ikMzS.png)
+![result](https://i.imgur.com/O3mhtkA.png)

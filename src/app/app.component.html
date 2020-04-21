@@ -1,7 +1,11 @@
-<bottom-nav-container>
+<bottom-nav-container height="62px">
 
   <bottom-nav-content>
-    <mat-toolbar>An example for a bottom nav bar</mat-toolbar>
+
+    <mat-toolbar>
+      <mat-slide-toggle (click)="toggleDarkMode()">Dark Theme</mat-slide-toggle>
+      <mat-slide-toggle (click)="toggleColorfulMode()">Colorful Theme</mat-slide-toggle>
+    </mat-toolbar>
 
     <router-outlet></router-outlet>
 
