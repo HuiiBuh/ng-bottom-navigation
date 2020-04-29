@@ -2,6 +2,9 @@
 
 ## Installation
 
+[NPM package](https://www.npmjs.com/package/ng-bottom-navigation).  
+__This package was build with Ivy!__
+
 ```bash
 npm install --save ng-bottom-navigation
 ```
@@ -18,7 +21,7 @@ In addition to this angular routing has to be enabled.
 
 ```html
 <!-- A wrapper for the hole page -->
-<bottom-nav-container [height]="70px">
+<bottom-nav-container height="70px">
 
   <!-- The main content has to be inside here -->
   <!-- You can add a nav, ... It is recommended to put the router in here -->
