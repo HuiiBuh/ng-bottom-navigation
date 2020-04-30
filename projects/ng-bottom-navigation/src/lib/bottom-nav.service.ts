@@ -1,4 +1,4 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 import {Observable, Subscription} from 'rxjs';
 import CustomBottomNavEventEmitter from './CustomBottomNavEventEmitter';

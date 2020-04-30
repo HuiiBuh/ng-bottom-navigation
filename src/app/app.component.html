@@ -1,16 +1,32 @@
-<bottom-nav-container height="62px">
+<bottom-nav-wrapper bottomNavHeight="60px" topNavHeight="55px" bottomNavBreakpoint="600px">
 
-  <bottom-nav-content>
+  <!-- Top nav content -->
+  <top-nav-wrapper>
+    <mat-card class="header">
+      <span class="title" routerLink="/">App Name</span>
+      <span routerLink="/like">Like</span>
+      <span routerLink="/watch">Watch</span>
+    </mat-card>
+  </top-nav-wrapper>
 
-    <mat-toolbar>
-      <mat-slide-toggle (click)="toggleDarkMode()">Dark Theme</mat-slide-toggle>
-      <mat-slide-toggle (click)="toggleColorfulMode()">Colorful Theme</mat-slide-toggle>
-    </mat-toolbar>
+  <!-- Main content -->
+  <application-content>
+
+    <div style="text-align: center">
+      <span class="card-span">
+        <mat-card>
+          <mat-slide-toggle (click)="toggleDarkMode()">Dark Theme</mat-slide-toggle>
+          <mat-slide-toggle (click)="toggleColorfulMode()">Colorful Theme</mat-slide-toggle>
+        </mat-card>
+      </span>
+    </div>
 
     <router-outlet></router-outlet>
 
-  </bottom-nav-content>
+  </application-content>
 
+
+  <!-- Bottom nav -->
   <bottom-nav>
     <bottom-nav-item link="" [exact]="true" label="home">
       home
@@ -23,4 +39,4 @@
     </bottom-nav-item>
   </bottom-nav>
 
-</bottom-nav-container>
+</bottom-nav-wrapper>

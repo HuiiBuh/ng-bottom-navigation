@@ -16,6 +16,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,24 +25,25 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     LikeComponent,
     WatchComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgBottomNavigationModule,
-    BrowserAnimationsModule,
-    MatRippleModule,
-    MatToolbarModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MarkdownModule.forRoot({
-      loader: HttpClient,
-      sanitize: SecurityContext.NONE,
-    }),
-    MatDividerModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSlideToggleModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgBottomNavigationModule,
+        BrowserAnimationsModule,
+        MatRippleModule,
+        MatToolbarModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MarkdownModule.forRoot({
+            loader: HttpClient,
+            sanitize: SecurityContext.NONE,
+        }),
+        MatDividerModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSlideToggleModule,
+        MatCardModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

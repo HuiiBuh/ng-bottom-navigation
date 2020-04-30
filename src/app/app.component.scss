@@ -1,3 +1,24 @@
 mat-slide-toggle {
   margin-right: 1rem;
 }
+
+.card-span {
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem;
+  width: 300px;
+}
+
+mat-card {
+  border-radius: 0;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.header > * {
+  margin-right: 1rem;
+  cursor: pointer;
+}
