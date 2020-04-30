@@ -1,23 +1,39 @@
 # Bottom Navigation Bar
 
+## Installation
+
+[NPM package](https://www.npmjs.com/package/ng-bottom-navigation).  
+__This package was build with Ivy!__
+
+```bash
+npm install --save ng-bottom-navigation
+```
+
 ## Dependencies
 
 + [Angular material](https://material.angular.io/)
-+ [Material icons](https://www.npmjs.com/package/@material-ui/icons)
 
-Both libraries have to be installed in your project.
+Both libraries have to be installed in your project.  
+In addition to this angular routing has to be enabled.
 
 ## Usage
 
 ```html
-<!-- A wrapper for the hole page --> 
-<bottom-nav-container>
+<!-- A wrapper for the hole page -->
+<!-- Specify the height of the bottom nav, the top nav and the breakpoint between the two of them. If you don't intend  -->
+<!-- If you don't intend to use a top nav for desktop devices ignore the topNavHeight and the bottomNavBreakpoint parameter -->
+<bottom-nav-wrapper bottomNavHeight="60px" topNavHeight="60px" bottomNavBreakpoint="600px">
+
+  <!-- Top nav content. Optional and only use it if you want a nav bar for desktop devices -->
+  <top-nav-wrapper>
+    <!-- Your nav -->
+  </top-nav-wrapper>
 
   <!-- The main content has to be inside here -->
   <!-- You can add a nav, ... It is recommended to put the router in here -->
-  <bottom-nav-content>
+  <application-content>
     <router-outlet></router-outlet>
-  </bottom-nav-content>
+  </application-content>
 
   <!-- The bottom nav bar -->
   <bottom-nav>
@@ -43,26 +59,43 @@ Both libraries have to be installed in your project.
 
   </bottom-nav>
 
-</bottom-nav-container>
+</bottom-nav-wrapper>
 ```
 
 In addition to the html you have to include the `ng-bottom-navigation.scss` file in your index.scss file!
 
-## Configuration and themeing
+## Configuration and theming
 
-The background of the nav-bar automatically changes to a dark color, if you have a dark theme.
-If you use a custom theme and want other highlight colors you can add your own highlight color with css variables. 
+### Configuration
 
-```scss
-:root {
-  // Configure the active color 
-  --bottom-nav-active-color: #3880ff;
+The parameters of the `bottom-nav-wrapper` component are optional. You can leave them empty to use the default value (default values are the values in the example)-
+
+You can add an optional topNav (see example) if you want to. The library will automatically switch between the two nav bars depending on the `bottomNavBreakpoint` parameters.
+
+
+### Theming
+If you are using a custom theme you can take advantage of the theming mixin fo the bottom navigation bar.  
+Import the `ng-bottom-navigation.scss` file and use the `bottom-nav-theme` mixin.
   
-  // Configure the height of the nav bar
-  --bottom-nav-height: 60px;
+```scss
+// Earlier created custom theme
+$light-theme: mat-light-theme($primary, $accent, $warm);
+
+// Include the mixin and pass your custom theme
+@include bottom-nav-theme($light-theme);
+
+// You can also pass the colorful option ot the mixin. This will change the background color of the nav bar to your primary color
+@include bottom-nav-theme($light-theme, colorful)
+
+// You also have to include the mixin in your dark theme and padd the dark theme to it
+.dark-theme {
+  $dark-theme: mat-light-theme($primary, $accent, $warm);
+  @include bottom-nav-theme($dark-theme)
 }
+
+
 ```
 
 ## Result
 
-![result](https://i.imgur.com/R2ikMzS.png)
+![result](https://i.imgur.com/O3mhtkA.png)
