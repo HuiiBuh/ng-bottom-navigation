@@ -1,0 +1,6 @@
+.content-wrapper {
+  width: 100vw;
+  overflow-x: hidden;
+
+  height: calc(100vh - var(--bottom-nav-height) - var(--top-nav-height));
+}
