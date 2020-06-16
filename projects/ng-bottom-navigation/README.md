@@ -3,7 +3,6 @@
 ## Installation
 
 [NPM package](https://www.npmjs.com/package/ng-bottom-navigation).  
-__This package was build with Ivy!__
 
 ```bash
 npm install --save ng-bottom-navigation
